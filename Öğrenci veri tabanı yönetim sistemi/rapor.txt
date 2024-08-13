@@ -1,0 +1,27 @@
+                                                             Genel Tanım
+  Bu raporda, bir Öğrenci Veritabanı Yönetim Sistemi (ÖVYS) tasarımının ve bu sistem üzerinde gerçekleştirilen SQL sorgularının detayları açıklanmaktadır. 
+Veritabanı, öğrencilerin bilgilerini, ders kayıtlarını ve aldıkları derslerle ilgili notları içermektedir.
+
+                                                             Veritabanı Tasarımı
+Veritabanında üç ana tablo bulunmaktadır: Öğrenciler, Dersler ve Kayıtlar. 
+
+  1. Öğrenciler Tablosu
+öğrenci_id (PRIMARY KEY): Öğrencinin benzersiz kimliği.
+ilk_ad : Öğrencinin adı.
+soy_ad : Öğrencinin soyadı.
+öğrencinin_bölümü : Öğrencinin bölümü.
+kayıt_yılı : Öğrencinin kayıt yılı.
+
+
+  2. Dersler Tablosu
+ders_id (PRIMARY KEY): Dersin benzersiz kimliği.
+ders_adı : Dersin adı.
+ders_kodu : Dersin kodu 
+kredi_sayısı : Dersin kredi sayısı.
+
+
+  3. Kayıtlar Tablosu
+kayıt_id (PRIMARY KEY): Kayıtların benzersiz kimliği.
+öğrenci_id : Öğrencinin kimliği 
+ders_id : Dersin kimliği 
+alınan_not : Öğrencinin dersten aldığı not 

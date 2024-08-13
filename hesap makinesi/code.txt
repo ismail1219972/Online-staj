@@ -1,0 +1,90 @@
+import math
+
+def toplama(a, b):
+    return a + b
+
+def cikarma(a, b):
+    return a - b
+
+def carpma(a, b):
+    return a * b
+
+def bolme(a, b):
+    if b == 0:
+        return "Hata: Sifira bolme yapilmaz."
+    return a / b
+
+def karekok(a):
+    if a < 0:
+        return "Hata: Negatif sayinin karekoku alinamaz."
+    return math.sqrt(a)
+
+def us_alma(a, b):
+    return a ** b
+
+def mod_alma(a, b):
+    return a % b
+
+# Hesap makinesi fonksiyonu
+def hesap_makinesi():
+    gecmis = []
+    while True:
+        print("\nLutfen bir islem secin:")
+        print("1. Toplama")
+        print("2. Cikarma")
+        print("3. Carpma")
+        print("4. Bolme")
+        print("5. Karekok")
+        print("6. Us alma")
+        print("7. Mod alma")
+        print("8. Gecmisi goster")
+        print("9. Cikis")
+
+        secim = input("Seciminiz (1/2/3/4/5/6/7/8/9): ")
+
+        if secim == '9':
+            print("Hesap makinesinden cikiliyor")
+            break
+        elif secim in ['1', '2', '3', '4', '6', '7']:
+            sayi1 = float(input("Birinci sayiyi girin: "))
+            sayi2 = float(input("Ikinci sayiyi girin: "))
+
+            if secim == '1':
+                sonuc = toplama(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+            elif secim == '2':
+                sonuc = cikarma(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+            elif secim == '3':
+                sonuc = carpma(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+            elif secim == '4':
+                sonuc = bolme(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+            elif secim == '6':
+                sonuc = us_alma(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+            elif secim == '7':
+                sonuc = mod_alma(sayi1, sayi2)
+                print(f"Sonuc: {sonuc}")
+
+            gecmis.append(f"{sayi1} ve {sayi2} ile yapilan islem sonucu: {sonuc}")
+
+        elif secim == '5':
+            sayi = float(input("Bir sayi girin: "))
+            sonuc = karekok(sayi)
+            print(f"Sonuc: {sonuc}")
+            gecmis.append(f"{sayi} sayisinin karekoku: {sonuc}")
+
+        elif secim == '8':
+            print("\nnGecmis:")
+            for item in gecmis:
+                print(item)
+            if not gecmis:
+                print("Henuz gecmiste bir islem yok.")
+
+        else:
+            print("Gecersiz secim, lutfen tekrar deneyin.")
+
+# Hesap makinesini calistir
+hesap_makinesi()
